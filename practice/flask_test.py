@@ -17,7 +17,7 @@ def index():
 def backend_sample():
     return render_template('backend_sample.html', backend_result = "1000개!!")
 
-@app.route('/login',methods=['GET', 'POST'])
+@app.route('/login',methods=['GET', 'POST']) # API
 def login():
     if request.method=='POST':
         print("login 버튼을 누름")
