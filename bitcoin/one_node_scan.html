@@ -1,0 +1,26 @@
+<h1><center> pyBTC Block Scan </center> </h1>
+
+<div>
+
+    <table border = "1">
+      <tr>
+        <th>timestamp</th>
+        <th>previous_hash</th>
+        <th>nonce</th>
+        <th>transactions</th>
+      </tr>
+        
+      {%for i in range(0,block_len)%} 
+      <!-- 테이블 내 데이터 입력 - 테이블의 행을 블록 개수만큼 루프를 돌며 생성해주고, 각각의 칸에 열의 번호에 맞는 timestamp, previous_hash, nonce, transactions 값이 입력되도록-->
+      <tr>
+        <td>{{df_scan.loc[i,'timestamp']}}</td>
+        <td>{{df_scan.loc[i,'previous_hash']}}</td>
+        <td>{{df_scan.loc[i,'nonce']}}</td>
+        <td style="font-size:2px">{{df_scan.loc[i,'transactions']}}</td>
+      </tr>
+       {%endfor%}
+
+    </table>   
+
+    
+</div>
